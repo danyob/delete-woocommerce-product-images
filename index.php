@@ -13,16 +13,16 @@ function cd_delete_woo_images_menu() {
 	add_submenu_page('woocommerce', 'Delete Product Images', 'Delete Product Images', 'manage_options', 'cd-delete-woo-images', 'cd_delete_woo_images_settings');
 }
 
-function my_enqueue($hook) {
+function cd_enqueue_dwpi($hook) {
     wp_enqueue_script('dwpi',  plugins_url('/dwpi.js', __FILE__), array('jquery')); 
 }
-add_action( 'admin_enqueue_scripts', 'my_enqueue' );
+add_action( 'admin_enqueue_scripts', 'cd_enqueue_dwpi' );
 
 function cd_delete_woo_images_settings() {
 	if ( !current_user_can( 'manage_options' ) )  {
 		wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
 	}
-	echo '<div class="wrap timedBanner">';
+	echo '<div class="wrap">';
 		$todelete = array();
 		echo '<h2>Delete WooCommerce Product Images</h2>'; 
 		$howmany = 0;
