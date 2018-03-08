@@ -38,14 +38,13 @@ function cd_delete_woo_images_settings() {
 		}
 		if(isset($_POST['deleteimages'])){
 			foreach($todelete as $delete){
-				//echo $delete.'</br>';
 				wp_delete_attachment( $delete, true );
 			}
 			echo '<div class="notice notice-success is-dismissible"><p>All images have been deleted!</p></div>';
 			$howmany = 0;	
 		}
 		echo '<p>You currently have <strong>'.$howmany.'</strong> product images.</p>';
-		echo '<form name="massDelete" action="" method="post" id="deleteallimages" >';
+		echo '<form name="massDelete" method="post" id="deleteallimages" >';
 			echo '<button type="submit" name="deleteimages" style="margin-top:50px;" class="button button-primary button-large deleteAll">Delete ALL '.$howmany.' Product Images</button>';
 		echo '</form>';
 	echo '</div>'; 
