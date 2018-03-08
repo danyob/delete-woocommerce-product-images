@@ -1,12 +1,11 @@
 <?php 
-/**
+/*
  * Plugin Name: Delete WooCommerce Product Images
  * Description: Quick and easy way to delete all WooCommerce Product Images
  * Plugin URI: 
  * Author: Code Den Ltd
  * Author URI: https://codeden.co.uk
  * Version: 1.0.0
- *
  */
 add_action( 'admin_menu', 'cd_delete_woo_images_menu' );
 function cd_delete_woo_images_menu() {
